@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/ROCKETRY.dir/src/main.cpp.o CMakeFiles/ROCKETRY.dir/src/logger.cpp.o -o ROCKETRY 

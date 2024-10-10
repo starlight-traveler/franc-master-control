@@ -1,0 +1,7 @@
+/local/rocketry/rocketry-24-25/build/CMakeFiles/check-template.dir
+/local/rocketry/rocketry-24-25/build/CMakeFiles/ROCKETRY.dir
+/local/rocketry/rocketry-24-25/build/CMakeFiles/edit_cache.dir
+/local/rocketry/rocketry-24-25/build/CMakeFiles/rebuild_cache.dir
+/local/rocketry/rocketry-24-25/build/lib/quill/CMakeFiles/quill.dir
+/local/rocketry/rocketry-24-25/build/lib/quill/CMakeFiles/edit_cache.dir
+/local/rocketry/rocketry-24-25/build/lib/quill/CMakeFiles/rebuild_cache.dir
