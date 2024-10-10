@@ -302,6 +302,9 @@ ROCKETRY_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ROCKETRY_SOURCE_DIR:STATIC=/local/rocketry/rocketry-24-25
 
+//Build the project in test mode, running only tests.
+RUN_TESTS:BOOL=ON
+
 //Connect Without GUI
 SERVER_CONNECT:BOOL=OFF
 
@@ -325,6 +328,9 @@ quill_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 quill_SOURCE_DIR:STATIC=/local/rocketry/rocketry-24-25/lib/quill
+
+//Path to a library.
+wiringPi_LIB:FILEPATH=wiringPi_LIB-NOTFOUND
 
 
 ########################

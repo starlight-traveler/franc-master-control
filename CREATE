@@ -33,7 +33,6 @@ function display_help() {
     echo "  --release             Build the project in release mode."
     echo "  --compiler            Specify the compiler (e.g., gcc or clang)."
     echo "  --force               Force a full rebuild of the project."
-    echo "  --flatbuffers-only    Install the flatbuffer headers."
     echo "  --build-project       Build only the project, no other executable."
     echo "  -h, --help            Display this help message and exit."
     echo ""
@@ -172,6 +171,7 @@ INSTALL_AFTER_BUILD=false
 COMPILE_PROJECT=false
 BUILD_PROJECT_EARTHLY=true
 HEADLESS=OFF
+TESTS=OFF
 
 # Enhanced option parsing
 while [[ "$#" -gt 0 ]]; do
@@ -194,6 +194,7 @@ while [[ "$#" -gt 0 ]]; do
          shift ;;
         -h|--help) display_help ;;
         --headless) HEADLESS=ON; shift ;;
+        --tests) TESTS=ON; shift ;;
         *) echo "${Yellow}================================================================================${Reset}\n${Red}Unknown option: $1${Reset}"; display_help; exit 1 ;;
     esac
 done
@@ -221,7 +222,7 @@ echo "${Reset}${Yellow}=========================================================
 echo "${BoldBlue}[Build] Running pre-build checks...${Reset}"
 
 # Check for essential tools
-essential_tools=("cmake" "gcc" "g++" "make" "flatc")
+essential_tools=("cmake" "gcc" "g++" "make")
 for tool in "${essential_tools[@]}"; do
     if ! command -v $tool &> /dev/null; then
         echo "${Red} [Check] Error: $tool is required but not installed.${Reset}"
@@ -229,11 +230,11 @@ for tool in "${essential_tools[@]}"; do
     fi
 done
 
-# Check for JAVA_HOME if needed
-if [ -z "$JAVA_HOME" ]; then
-    echo "${Red}[Check] Error: JAVA_HOME is not set.${Reset}"
-    # exit 1
-fi
+# # Check for JAVA_HOME if needed
+# if [ -z "$JAVA_HOME" ]; then
+#     echo "${Red}[Check] Error: JAVA_HOME is not set.${Reset}"
+#     # exit 1
+# fi
 
 # Ensure write permission in the build directory
 if [ ! -w "build" ]; then
@@ -249,11 +250,11 @@ if (( available_space < required_space_mb * 1024 )); then
     # exit 1
 fi
 
-# Network availability check (simple ping to a reliable host)
-if ! ping -c 1 8.8.8.8 >/dev/null 2>&1; then
-    echo "${Red}[Check] Error: Network check failed. Please check your internet connection.${Reset}"
-    # exit 1
-fi
+# # Network availability check (simple ping to a reliable host)
+# if ! ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+#     echo "${Red}[Check] Error: Network check failed. Please check your internet connection.${Reset}"
+#     # exit 1
+# fi
 
 # Check specific configuration file is present
 # if [ ! -f "config/settings.yaml" ]; then
@@ -289,7 +290,7 @@ if [[ "$COMPILE_PROJECT" == true ]]; then
   echo "${BoldBlue}[Build]${Reset} ${Green}Configuring with CMake...${Reset}"
   echo "${Yellow}================================================================================${Reset}"
   echo "${BoldBlue}********************************************************************************${Reset}"
-  cmake -S . -B build -DCMAKE_BUILD_TYPE=$BUILD_TYPE ${COMPILER:+-DCMAKE_CXX_COMPILER=$COMPILER} || { echo "CMake configuration failed"; exit 1; }
+  cmake -S . -B build -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DRUN_TESTS=$TESTS ${COMPILER:+-DCMAKE_CXX_COMPILER=$COMPILER} || { echo "CMake configuration failed"; exit 1; }
   echo "${Yellow}================================================================================${Reset}"
   echo "${BoldBlue}[Build]${Reset} ${Green}Building with CMake...${Reset}"
   echo "${Yellow}================================================================================${Reset}"

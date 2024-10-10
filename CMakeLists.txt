@@ -120,7 +120,7 @@ configure_file(
 # option(OPTION_BUILD_DOCS      "Build documentation."                                   OFF)
 # option(OPTION_BUILD_EXAMPLES  "Build examples."                                        OFF)
 option(OPTION_ENABLE_COVERAGE "Add coverage information."                              ON)
-option(SERVER_CONNECT "Connect Without GUI" OFF)
+option(RUN_TESTS "Build the project in test mode, running only tests." OFF)
 
 
 #
@@ -140,12 +140,22 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 # 
 
+# WiringPi
+find_library(wiringPi_LIB wiringPi)
+
 # Quill 
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/quill)
 
 # Project declaration must be after the Hunter Cmake build system.
 project(ROCKETRY LANGUAGES CXX)
+
+if(RUN_TESTS)
+    add_definitions(-DRUN_TESTS)
+    message(STATUS "Building in TEST mode: Only running tests.")
+else()
+    message(STATUS "Building in NORMAL mode: Running full application.")
+endif()
 
 # Define the executable target. 
 # Add new source files to this list to compile them as part of the project.
@@ -167,6 +177,7 @@ target_include_directories(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
     quill::quill
+    ${wiringPi}
 )
 # Specify C++17 as the target C++ standard for this project.
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
