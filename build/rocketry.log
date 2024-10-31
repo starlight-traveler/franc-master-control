@@ -1,3 +1,0 @@
-01:02:13.154594204 [97491] main.cpp:63                  LOG_DEBUG     root         Build date: 2024-10-10 01:02:04.662
-01:02:13.154853298 [97491] main.cpp:64                  LOG_DEBUG     root         Project version: 1.0.0
-01:02:13.154856854 [97491] main.cpp:79                  LOG_INFO      root         This is running test.

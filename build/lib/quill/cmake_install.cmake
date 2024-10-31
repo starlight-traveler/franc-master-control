@@ -1,4 +1,4 @@
-# Install script for directory: /local/rocketry/rocketry-24-25/lib/quill
+# Install script for directory: /local/rocketry/franc/lib/quill
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

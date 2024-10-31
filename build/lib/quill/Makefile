@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /local/rocketry/rocketry-24-25
+CMAKE_SOURCE_DIR = /local/rocketry/franc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /local/rocketry/rocketry-24-25/build
+CMAKE_BINARY_DIR = /local/rocketry/franc/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /local/rocketry/rocketry-24-25/build && $(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/rocketry-24-25/build/CMakeFiles /local/rocketry/rocketry-24-25/build/lib/quill//CMakeFiles/progress.marks
-	cd /local/rocketry/rocketry-24-25/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/rocketry-24-25/build/CMakeFiles 0
+	cd /local/rocketry/franc/build && $(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/franc/build/CMakeFiles /local/rocketry/franc/build/lib/quill//CMakeFiles/progress.marks
+	cd /local/rocketry/franc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/franc/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /local/rocketry/rocketry-24-25/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/clean
+	cd /local/rocketry/franc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,17 +103,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /local/rocketry/rocketry-24-25/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/preinstall
+	cd /local/rocketry/franc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /local/rocketry/rocketry-24-25/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/preinstall
+	cd /local/rocketry/franc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/quill/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /local/rocketry/rocketry-24-25/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /local/rocketry/franc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -136,6 +136,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /local/rocketry/rocketry-24-25/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /local/rocketry/franc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

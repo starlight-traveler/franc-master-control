@@ -84,7 +84,7 @@ endif()
 add_definitions(-DBUILD_DATE="${BUILD_DATE}")
 
 # Meta information about the project
-set(META_PROJECT_NAME        "rocektry")
+set(META_PROJECT_NAME        "franc")
 set(META_PROJECT_DESCRIPTION "ND-Rocketry")
 set(META_AUTHOR_ORGANIZATION "University of Notre Dame")
 set(META_AUTHOR_DOMAIN       "")
@@ -135,20 +135,112 @@ enable_cppcheck(ON)
 enable_clang_tidy(ON)
 enable_coverage(${OPTION_ENABLE_COVERAGE})
 
+# Python Integration
+
+find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
+if(Python3_FOUND)
+    message(STATUS "Found Python3: ${Python3_EXECUTABLE} (found version \"${Python3_VERSION}\")")
+    message(STATUS "Python3 Headers: ${Python3_INCLUDE_DIRS}")
+    message(STATUS "Python3 Libraries: ${Python3_LIBRARIES}")
+else()
+    message(FATAL_ERROR "Python3 is not found.")
+endif()
+
+# Include Python headers
+include_directories(${Python3_INCLUDE_DIRS})
+
+# Link Python libraries
+link_libraries(${Python3_LIBRARIES})
+
+# Add pybind11
+add_subdirectory(lib/pybind11)
+
 # Project-wide include directories. Add any new general include directories here.
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 # 
 
-# WiringPi
-find_library(wiringPi_LIB wiringPi)
+# # WiringPi
+# find_library(wiringPi_LIB wiringPi)
+
+# # Check if WiringPi was found
+# if(NOT wiringPi_LIB)
+#     message(STATUS "WiringPi library not found automatically. ")
+# endif()
+
+# # Optionally, find the include directory
+# find_path(WIRINGPI_INCLUDE_DIR wiringPi.h PATHS /usr/include /usr/local/include)
+
+# if(NOT WIRINGPI_INCLUDE_DIR)
+#     message(STATUS "WiringPi include directory not found automatically.")
+# endif()
+
+# set(WIRINGPI_LIBRARY "/usr/lib/libwiringPi.so")
+# set(WIRINGPI_INCLUDE_DIR "/usr/include")
+
+# message(STATUS "WiringPi Library: ${wiringPi_LIB}")
+# message(STATUS "WiringPi Include Directory: ${WIRINGPI_INCLUDE_DIR}")
+
+################################################################################
+### Find the pigpio shared libraries.
+################################################################################
+
+# Find the path to the pigpio includes.
+find_path(pigpio_INCLUDE_DIR 
+	NAMES pigpio.h pigpiod_if.h pigpiod_if2.h
+	HINTS /usr/local/include)
+	
+# Find the pigpio libraries.
+find_library(pigpio_LIBRARY 
+	NAMES libpigpio.so
+	HINTS /usr/local/lib)
+find_library(pigpiod_if_LIBRARY 
+	NAMES libpigpiod_if.so
+	HINTS /usr/local/lib)
+find_library(pigpiod_if2_LIBRARY 
+	NAMES libpigpiod_if2.so
+	HINTS /usr/local/lib)
+    
+# Set the pigpio variables to plural form to make them accessible for 
+# the paramount cmake modules.
+set(pigpio_INCLUDE_DIRS ${pigpio_INCLUDE_DIR})
+set(pigpio_INCLUDES     ${pigpio_INCLUDE_DIR})
+
+# Handle REQUIRED, QUIET, and version arguments 
+# and set the <packagename>_FOUND variable.
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(pigpio 
+    DEFAULT_MSG 
+    pigpio_INCLUDE_DIR pigpio_LIBRARY pigpiod_if_LIBRARY pigpiod_if2_LIBRARY)
+
+
+ # Find pigpio include directory
+find_path(PIGPIO_INCLUDE_DIR
+    NAMES pigpio.h
+    HINTS /usr/local/include /usr/include
+)
+
+# Find pigpio library
+find_library(PIGPIO_LIBRARY
+    NAMES pigpio
+    HINTS /usr/local/lib /usr/lib
+)
+
+# Check if pigpio was found
+if(NOT PIGPIO_LIBRARY OR NOT PIGPIO_INCLUDE_DIR)
+    message(FATAL_ERROR "pigpio library or include directory not found. Please install pigpio.")
+else()
+    message(STATUS "Found pigpio library: ${PIGPIO_LIBRARY}")
+    message(STATUS "Found pigpio include directory: ${PIGPIO_INCLUDE_DIR}")
+endif()
+
+
 
 # Quill 
-
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/quill)
 
 # Project declaration must be after the Hunter Cmake build system.
-project(ROCKETRY LANGUAGES CXX)
+project(FRANC LANGUAGES CXX)
 
 if(RUN_TESTS)
     add_definitions(-DRUN_TESTS)
@@ -162,6 +254,7 @@ endif()
 add_executable(${PROJECT_NAME} 
     src/main.cpp
     src/logger.cpp
+    src/spi/spi_bus.cpp
 )
 
 # Set include directories for the target. 
@@ -170,6 +263,10 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE 
         ${CMAKE_CURRENT_BINARY_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/registers
+        ${Python3_INCLUDE_DIRS}
+        ${WIRINGPI_INCLUDE_DIR}
+        ${PIGPIO_INCLUDE_DIR}  # Add pigpio include directory
 )
 
 # Link libraries with the target. 
@@ -177,7 +274,9 @@ target_include_directories(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
     quill::quill
-    ${wiringPi}
+    pybind11::embed 
+    ${Python3_LIBRARIES}
+    ${PIGPIO_LIBRARY}  # Link pigpio library
 )
 # Specify C++17 as the target C++ standard for this project.
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

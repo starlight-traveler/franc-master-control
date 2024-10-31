@@ -23,7 +23,7 @@ quill::Logger *initialize_logger()
     auto console_sink = quill::Frontend::create_or_get_sink<quill::ConsoleSink>("sink_client", custom_console_colours);
 
     auto file_sink = quill::Frontend::create_or_get_sink<quill::FileSink>(
-        "rocketry.log",
+        "franc.log",
         []()
         {
             quill::FileSinkConfig cfg;

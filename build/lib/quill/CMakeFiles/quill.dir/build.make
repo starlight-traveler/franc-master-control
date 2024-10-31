@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /local/rocketry/rocketry-24-25
+CMAKE_SOURCE_DIR = /local/rocketry/franc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /local/rocketry/rocketry-24-25/build
+CMAKE_BINARY_DIR = /local/rocketry/franc/build
 
 # Utility rule file for quill.
 
@@ -74,10 +74,10 @@ lib/quill/CMakeFiles/quill.dir/build: quill
 .PHONY : lib/quill/CMakeFiles/quill.dir/build
 
 lib/quill/CMakeFiles/quill.dir/clean:
-	cd /local/rocketry/rocketry-24-25/build/lib/quill && $(CMAKE_COMMAND) -P CMakeFiles/quill.dir/cmake_clean.cmake
+	cd /local/rocketry/franc/build/lib/quill && $(CMAKE_COMMAND) -P CMakeFiles/quill.dir/cmake_clean.cmake
 .PHONY : lib/quill/CMakeFiles/quill.dir/clean
 
 lib/quill/CMakeFiles/quill.dir/depend:
-	cd /local/rocketry/rocketry-24-25/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /local/rocketry/rocketry-24-25 /local/rocketry/rocketry-24-25/lib/quill /local/rocketry/rocketry-24-25/build /local/rocketry/rocketry-24-25/build/lib/quill /local/rocketry/rocketry-24-25/build/lib/quill/CMakeFiles/quill.dir/DependInfo.cmake --color=$(COLOR)
+	cd /local/rocketry/franc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /local/rocketry/franc /local/rocketry/franc/lib/quill /local/rocketry/franc/build /local/rocketry/franc/build/lib/quill /local/rocketry/franc/build/lib/quill/CMakeFiles/quill.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/quill/CMakeFiles/quill.dir/depend
 

@@ -1,11 +1,15 @@
 #include <iostream>
 #include <cstring>
 #include <csignal>
+#include <pybind11/embed.h>
+#include <pigpio.h>
 
 #include "logger.h"
 #include "version.h"
+#include "threading.tpp"
+#include "spi_bus.h"
 
-// namespace py = pybind11;
+namespace py = pybind11;
 
 /**
  * @brief Setup Signal Handlers
@@ -33,7 +37,7 @@ void signalHandler(int signum)
 /**
  * 
  * @fn int main()
- * @brief Main function to enter the program, should be classified as main thread
+ * @brief Main function to enter the program
  *
  * Initializes the system execution and should be considerd as primary
  * "runtime" thread.
@@ -59,28 +63,44 @@ int main()
     // Initalize logger
     quill::Logger *logger = initialize_logger();
 
+    // Initialize pigpio library
+    if (gpioInitialise() < 0)
+    {
+      std::cerr << "Failed to initialize pigpio." << std::endl;
+      return 1;
+    }
+
     // Initalize current build
     LOG_DEBUG(logger, "Build date: {}", BUILD_DATE);
     LOG_DEBUG(logger, "Project version: {}", PROJECT_VERSION);
 
     // Initalize pybind
     setenv("PYTHONPATH", "../runnable/", 1);
-    // py::scoped_interpreter guard{};
+    py::scoped_interpreter guard{};
 
   /**
    * @brief Start all tests to make sure functionality exits atomically
-   *
-   * All tests should run to make sure no threading issues or post-compilation
-   * issues occur.
+   * 
+   * Tests will only run if the --tests flag is enabled with the CREATE script
    */
 
 #ifdef RUN_TESTS
 
     LOG_INFO(logger, "This is running test.");
 
-#else    
+#else
 
-    LOG_INFO(logger, "Hello World!");
+    // Sensor Thread
+    std::thread sensor([&]()
+                       { threaded(logger, 5, 3, spiSetup); });
+
+    // // Transmission Thread
+    // std::thread transmission([&]()
+    //                   { threaded(logger, 5, 3, null, logger); });
+
+    // // Write Thread
+    // std::thread write([&]()
+    //                   { threaded(logger, 5, 3, null, logger); });
 
 #endif
 

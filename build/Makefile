@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /local/rocketry/rocketry-24-25
+CMAKE_SOURCE_DIR = /local/rocketry/franc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /local/rocketry/rocketry-24-25/build
+CMAKE_BINARY_DIR = /local/rocketry/franc/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/rocketry-24-25/build/CMakeFiles /local/rocketry/rocketry-24-25/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/franc/build/CMakeFiles /local/rocketry/franc/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/rocketry-24-25/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /local/rocketry/franc/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,17 @@ check-template/fast:
 .PHONY : check-template/fast
 
 #=============================================================================
-# Target rules for targets named ROCKETRY
+# Target rules for targets named FRANC
 
 # Build rule for target.
-ROCKETRY: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ROCKETRY
-.PHONY : ROCKETRY
+FRANC: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FRANC
+.PHONY : FRANC
 
 # fast build rule for target.
-ROCKETRY/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/build
-.PHONY : ROCKETRY/fast
+FRANC/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/build
+.PHONY : FRANC/fast
 
 #=============================================================================
 # Target rules for targets named quill
@@ -160,7 +160,7 @@ src/logger.o: src/logger.cpp.o
 
 # target to build an object file
 src/logger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/src/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/logger.cpp.o
 .PHONY : src/logger.cpp.o
 
 src/logger.i: src/logger.cpp.i
@@ -168,7 +168,7 @@ src/logger.i: src/logger.cpp.i
 
 # target to preprocess a source file
 src/logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/src/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/logger.cpp.i
 .PHONY : src/logger.cpp.i
 
 src/logger.s: src/logger.cpp.s
@@ -176,7 +176,7 @@ src/logger.s: src/logger.cpp.s
 
 # target to generate assembly for a file
 src/logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/src/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/logger.cpp.s
 .PHONY : src/logger.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -184,7 +184,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -192,7 +192,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -200,8 +200,32 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROCKETRY.dir/build.make CMakeFiles/ROCKETRY.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/spi/spi_bus.o: src/spi/spi_bus.cpp.o
+.PHONY : src/spi/spi_bus.o
+
+# target to build an object file
+src/spi/spi_bus.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/spi/spi_bus.cpp.o
+.PHONY : src/spi/spi_bus.cpp.o
+
+src/spi/spi_bus.i: src/spi/spi_bus.cpp.i
+.PHONY : src/spi/spi_bus.i
+
+# target to preprocess a source file
+src/spi/spi_bus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/spi/spi_bus.cpp.i
+.PHONY : src/spi/spi_bus.cpp.i
+
+src/spi/spi_bus.s: src/spi/spi_bus.cpp.s
+.PHONY : src/spi/spi_bus.s
+
+# target to generate assembly for a file
+src/spi/spi_bus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FRANC.dir/build.make CMakeFiles/FRANC.dir/src/spi/spi_bus.cpp.s
+.PHONY : src/spi/spi_bus.cpp.s
 
 # Help Target
 help:
@@ -212,7 +236,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... check-template"
-	@echo "... ROCKETRY"
+	@echo "... FRANC"
 	@echo "... quill"
 	@echo "... src/logger.o"
 	@echo "... src/logger.i"
@@ -220,6 +244,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/spi/spi_bus.o"
+	@echo "... src/spi/spi_bus.i"
+	@echo "... src/spi/spi_bus.s"
 .PHONY : help
 
 

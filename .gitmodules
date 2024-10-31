@@ -1,3 +1,6 @@
 [submodule "lib/quill"]
 	path = lib/quill
 	url = https://github.com/odygrd/quill.git
+[submodule "lib/pybind11"]
+	path = lib/pybind11
+	url = https://github.com/pybind/pybind11.git

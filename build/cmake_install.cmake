@@ -1,4 +1,4 @@
-# Install script for directory: /local/rocketry/rocketry-24-25
+# Install script for directory: /local/rocketry/franc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/local/rocketry/rocketry-24-25/build/lib/quill/cmake_install.cmake")
+  include("/local/rocketry/franc/build/lib/pybind11/cmake_install.cmake")
+  include("/local/rocketry/franc/build/lib/quill/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/local/rocketry/rocketry-24-25/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/local/rocketry/franc/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

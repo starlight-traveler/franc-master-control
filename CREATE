@@ -25,7 +25,7 @@ function display_help() {
     echo "${BoldBlue}Usage: $(basename $0) [options]"
     echo ""
     echo "Options:"
-    echo "  -r, --run             Run the ROCKETRY executable after building."
+    echo "  -r, --run             Run the FRANC executable after building."
     echo "  --clean               Clean the build directory before building."
     echo "  -v, --verbose         Enable verbose output during the build."
     echo "  --install-dependencies Install required dependencies based on the OS."
@@ -141,7 +141,6 @@ install_macos() {
   echo "${BoldBlue}[Install]${Reset}${Green} LCOV: $(lcov --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} Doxygen: $(doxygen --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} Flatc: $(flatc --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Earthly: $(earthly --version)${Reset}"
   echo "${Yellow}================================================================================${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} All dependencies installed successfully on macOS!${Reset}"
   echo "${Yellow}================================================================================${Reset}"
@@ -200,21 +199,14 @@ while [[ "$#" -gt 0 ]]; do
 done
 ``
 
-
 message="
-${Yellow}=========================================================================================================${Reset}
-${BoldBlue}      ___                       ___           ___           ___       ___           ___           ___     
-${BoldBlue}     /\__\          ___        /\  \         /\  \         /\__\     /\  \         /\  \         /\  \    
-${BoldBlue}    /:/ _/_        /\  \      /::\  \       /::\  \       /:/  /    /::\  \       /::\  \       /::\  \   
-${BoldBlue}   /:/ /\__\       \:\  \    /:/\:\  \     /:/\:\  \     /:/  /    /:/\:\  \     /:/\ \  \     /:/\ \  \  
-${BoldBlue}  /:/ /:/ _/_      /::\__\  /::\~\:\  \   /::\~\:\  \   /:/  /    /::\~\:\  \   _\:\~\ \  \   _\:\~\ \  \ 
-${BoldBlue} /:/_/:/ /\__\  __/:/\/__/ /:/\:\ \:\__\ /:/\:\ \:\__\ /:/__/    /:/\:\ \:\__\ /\ \:\ \ \__\ /\ \:\ \ \__\\
-${BoldBlue} \:\/:/ /:/  / /\/:/  /    \/_|::\/:/  / \:\~\:\ \/__/ \:\  \    \:\~\:\ \/__/ \:\ \:\ \/__/ \:\ \:\ \/__/
-${BoldBlue}  \::/_/:/  /  \::/__/        |:|::/  /   \:\ \:\__\    \:\  \    \:\ \:\__\    \:\ \:\__\    \:\ \:\__\  
-${BoldBlue}   \:\/:/  /    \:\__\        |:|\/__/     \:\ \/__/     \:\  \    \:\ \/__/     \:\/:/  /     \:\/:/  /  
-${BoldBlue}    \::/  /      \/__/        |:|  |        \:\__\        \:\__\    \:\__\        \::/  /       \::/  /   
-${BoldBlue}     \/__/                     \|__|         \/__/         \/__/     \/__/         \/__/         \/__/   
-${Reset}${Yellow}=================================================================================================${Reset}
+${Yellow}================================================================================
+${BoldBlue}    _   ______        ____  ____  ________ __ __________________  __
+${BoldBlue}   / | / / __ \      / __ \/ __ \/ ____/ //_// ____/_  __/ __ \ \/ /
+${BoldBlue}  /  |/ / / / /_____/ /_/ / / / / /   / ,<  / __/   / / / /_/ /\  / 
+${BoldBlue} / /|  / /_/ /_____/ _, _/ /_/ / /___/ /| |/ /___  / / / _, _/ / /  
+${BoldBlue}/_/ |_/_____/     /_/ |_|\____/\____/_/ |_/_____/ /_/ /_/ |_| /_/   
+${Reset}${Yellow}================================================================================${Reset}
 "
 echo "$message"
 
@@ -341,12 +333,12 @@ if [[ "$INSTALL_AFTER_BUILD" == true ]]; then
 fi
 
 # Run ROCKETRY if requested
-if [[ "$RUN_ROCKETRY" == true ]]; then
-  if [[ -f "ROCKETRY-CLIENT" ]]; then
-    ./ROCKETRY-CLIENT
+if [[ "$FRANC" == true ]]; then
+  if [[ -f "FRANC" ]]; then
+    ./FRANC
   else
     echo "${Red}================================================================================${Reset}"
-    echo "${Red}[Run] Error: Executable ROCKETRY not found in the current directory${Reset}"
+    echo "${Red}[Run] Error: Executable FRANC not found in the current directory${Reset}"
     echo "${Red}================================================================================${Reset}"
     exit 1
   fi
