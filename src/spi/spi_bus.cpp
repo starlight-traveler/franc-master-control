@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
-#include <pigpio.h>
-#include <unistd.h> // For usleep
+[#include <pigpio.h>
+]#include <unistd.h> // For usleep
 #include <cstring>  // For memset
 
 #include "LSM6DS032.h"
