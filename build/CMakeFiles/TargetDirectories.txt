@@ -1,9 +1,0 @@
-/local/rocketry/franc/build/CMakeFiles/check-template.dir
-/local/rocketry/franc/build/CMakeFiles/FRANC.dir
-/local/rocketry/franc/build/CMakeFiles/edit_cache.dir
-/local/rocketry/franc/build/CMakeFiles/rebuild_cache.dir
-/local/rocketry/franc/build/lib/pybind11/CMakeFiles/edit_cache.dir
-/local/rocketry/franc/build/lib/pybind11/CMakeFiles/rebuild_cache.dir
-/local/rocketry/franc/build/lib/quill/CMakeFiles/quill.dir
-/local/rocketry/franc/build/lib/quill/CMakeFiles/edit_cache.dir
-/local/rocketry/franc/build/lib/quill/CMakeFiles/rebuild_cache.dir
