@@ -1,0 +1,97 @@
+namespace SensorLog;
+
+// Enum to identify sensor types
+enum SensorType : byte {
+  BME688 = 0,
+  ENS160 = 1,
+  LSM6D032 = 2,
+  MPLAltimeter = 3,
+  BNO055 = 4
+}
+
+// Table for BME688 sensor data
+table BME688Data {
+  temperature: float;
+  pressure: float;
+  humidity: float;
+  gas_resistance: float;
+  altitude: float;
+}
+
+// Table for ENS160 sensor data
+table ENS160Data {
+  aqi: int;
+  tvoc: int;
+  eco2: int;
+  hp0: float;
+  hp1: float;
+  hp2: float;
+  hp3: float;
+}
+
+// Table for LSM6D032 sensor data
+table LSM6D032Data {
+  accel_x: float;
+  accel_y: float;
+  accel_z: float;
+  gyro_x: float;
+  gyro_y: float;
+  gyro_z: float;
+}
+
+// Table for MPLAltimeter sensor data
+table MPLAltimeterData {
+  pressure: float; // Pa
+  altitude: float; // meters
+}
+
+// Table for BNO055 sensor data
+table BNO055Data {
+  accel_x: float;
+  accel_y: float;
+  accel_z: float;
+  mag_x: float;
+  mag_y: float;
+  mag_z: float;
+  gyro_x: float;
+  gyro_y: float;
+  gyro_z: float;
+  euler_heading: float;
+  euler_roll: float;
+  euler_pitch: float;
+  linear_accel_x: float;
+  linear_accel_y: float;
+  linear_accel_z: float;
+  gravity_x: float;
+  gravity_y: float;
+  gravity_z: float;
+  calibration_status_system: byte;
+  calibration_status_gyro: byte;
+  calibration_status_accel: byte;
+  calibration_status_mag: byte;
+}
+
+// Union for sensor data
+union SensorDataUnion { 
+  BME688Data, 
+  ENS160Data, 
+  LSM6D032Data, 
+  MPLAltimeterData, 
+  BNO055Data 
+}
+
+// Table for individual sensor message
+table SensorMessage {
+  sensor_type: SensorType;
+  timestamp: ulong; // milliseconds since start or epoch
+  data: SensorDataUnion;
+}
+
+//Batching multiple sensor messages
+table SensorBatch {
+  timestamp: ulong; // Common timestamp for the batch
+  messages: [SensorMessage];
+}
+
+// Set SensorBatch as the root type
+root_type SensorBatch;
