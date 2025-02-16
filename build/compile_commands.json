@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/main.cpp.o -c /local/franc/franc-master-control/src/main.cpp",
+  "file": "/local/franc/franc-master-control/src/main.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/aprs.cpp.o -c /local/franc/franc-master-control/src/aprs.cpp",
+  "file": "/local/franc/franc-master-control/src/aprs.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/ax25.cpp.o -c /local/franc/franc-master-control/src/ax25.cpp",
+  "file": "/local/franc/franc-master-control/src/ax25.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/dsp.cpp.o -c /local/franc/franc-master-control/src/dsp.cpp",
+  "file": "/local/franc/franc-master-control/src/dsp.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/logger.cpp.o -c /local/franc/franc-master-control/src/logger.cpp",
+  "file": "/local/franc/franc-master-control/src/logger.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/transmit.cpp.o -c /local/franc/franc-master-control/src/transmit.cpp",
+  "file": "/local/franc/franc-master-control/src/transmit.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/config.cpp.o -c /local/franc/franc-master-control/src/config.cpp",
+  "file": "/local/franc/franc-master-control/src/config.cpp"
+},
+{
+  "directory": "/local/franc/franc-master-control/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2025-02-15 22:52:48.964\\\"\" -I/usr/local/include/libhackrf -I/local/franc/franc-master-control/include -I/local/franc/franc-master-control/build -I/local/franc/franc-master-control/lib/quill/include -O3 -DNDEBUG -O3 -march=native -mtune=native -Werror=return-type -std=gnu++17 -o CMakeFiles/FRANC.dir/src/interconnect.cpp.o -c /local/franc/franc-master-control/src/interconnect.cpp",
+  "file": "/local/franc/franc-master-control/src/interconnect.cpp"
+}
+]

@@ -1,0 +1,102 @@
+22:53:24.909483505 [2093874] main.cpp:171                 LOG_INFO      root         FRANC program initializing...
+22:53:24.910409421 [2093874] main.cpp:194                 LOG_INFO      root         Debug is enabled; printing configuration...
+22:53:25.011108128 [2093874] interconnect.cpp:110         LOG_INFO      root         Serial handshake successful on /dev/ttyACM0
+22:53:29.918887756 [2093874] main.cpp:288                 LOG_ERROR     root         JSON empty.
+22:53:29.918893127 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:29.918893460 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:29.918894108 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:29.918894312 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1,WIDE2-2
+22:53:29.918894886 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:29.918895386 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:29.918896219 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:30.849940533 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:30.850035829 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:30.850036032 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:32.050626607 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 10467
+22:53:32.050627385 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:32.050627403 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 1
+22:53:32.050639070 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:32.050639496 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:32.050639848 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:32.050639959 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:32.050640514 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:32.050641033 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:32.050641570 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:32.903088309 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:32.903625137 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:32.903625378 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:34.004082820 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 12493
+22:53:34.004083505 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:34.004083523 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 0
+22:53:34.004092746 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:34.004093246 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:34.004093560 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:34.004093801 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:34.004094283 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:34.004094801 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:34.004095246 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:34.857944403 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:34.858449565 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:34.858449676 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:35.959033319 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 14453
+22:53:35.959034431 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:35.959034468 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 1
+22:53:35.959051041 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:35.959051467 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:35.959051986 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:35.959052171 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:35.959052875 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:35.959053467 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:35.959054153 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:36.861702679 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:36.862206248 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:36.862206340 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:38.062723554 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 16498
+22:53:38.062724314 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:38.062724332 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 0
+22:53:38.062734202 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:38.062734554 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:38.062734869 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:38.062735110 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:38.062735573 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:38.062736073 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:38.062736814 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:38.931323236 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:38.931903323 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:38.931903545 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:40.032311612 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 18510
+22:53:40.032312334 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:40.032312352 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 1
+22:53:40.032321112 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:40.032321556 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:40.032321963 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:40.032322186 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:40.032322723 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:40.032323241 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:40.032323797 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:40.897873199 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:40.898371194 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:40.898371416 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:41.998808074 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 20475
+22:53:41.998808777 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:41.998808796 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 0
+22:53:41.998818074 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:41.998818499 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:41.998818833 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:41.998819074 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:41.998819555 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:41.998820018 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:41.998820536 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message
+22:53:42.852040489 [2093874] main.cpp:157                 LOG_INFO      root         APRS processing finished successfully.
+22:53:42.852543039 [2093874] main.cpp:295                 LOG_INFO      root         ===========================
+22:53:42.852543169 [2093874] main.cpp:296                 LOG_INFO      root         Started transmission of pkt8.s8
+22:53:43.952934196 [2093874] main.cpp:269                 LOG_INFO      root         Timestamp: 22446
+22:53:43.952934973 [2093874] main.cpp:270                 LOG_INFO      root         BME688 Temperature: 0
+22:53:43.952934973 [2093874] main.cpp:271                 LOG_INFO      root         ENS160 AQI: 1
+22:53:43.952944936 [2093874] main.cpp:110                 LOG_INFO      root         ===========================
+22:53:43.952945344 [2093874] main.cpp:111                 LOG_DEBUG     root         Using callsign: KD9WPR
+22:53:43.952945788 [2093874] main.cpp:112                 LOG_DEBUG     root         Using destination: APRS
+22:53:43.952946010 [2093874] main.cpp:113                 LOG_DEBUG     root         Using path: WIDE1-1\x00WIDE2-2
+22:53:43.952946529 [2093874] main.cpp:114                 LOG_DEBUG     root         Using output file: pkt8.s8
+22:53:43.952946992 [2093874] main.cpp:115                 LOG_DEBUG     root         Using sample format: IQ_S8
+22:53:43.952947547 [2093874] main.cpp:118                 LOG_DEBUG     root         Using message: Hello from APRS default message

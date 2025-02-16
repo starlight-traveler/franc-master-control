@@ -1,0 +1,7 @@
+/local/franc/franc-master-control/build/CMakeFiles/check-template.dir
+/local/franc/franc-master-control/build/CMakeFiles/FRANC.dir
+/local/franc/franc-master-control/build/CMakeFiles/edit_cache.dir
+/local/franc/franc-master-control/build/CMakeFiles/rebuild_cache.dir
+/local/franc/franc-master-control/build/lib/quill/CMakeFiles/quill.dir
+/local/franc/franc-master-control/build/lib/quill/CMakeFiles/edit_cache.dir
+/local/franc/franc-master-control/build/lib/quill/CMakeFiles/rebuild_cache.dir
